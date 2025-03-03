@@ -1,5 +1,3 @@
-import type { RequestHandler } from "express";
-
 // Load environment variables from .env file
 import "dotenv/config";
 
@@ -10,13 +8,10 @@ import "../database/checkConnection";
 
 // Import the Express application from ./app
 import app from "./app";
+/************************************************ */
 
-const sayWelcome: RequestHandler = (req, res) => {
-  res.send("Welcome to Wild Series !");
-}; // ...
 // Get the port from the environment variables
-app.get("/", sayWelcome);
-const port = process.env.APP_PORT || 3310;
+const port = process.env.APP_PORT;
 
 // Start the server and listen on the specified port
 app
